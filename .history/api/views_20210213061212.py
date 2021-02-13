@@ -297,8 +297,8 @@ class GetProfileAPIView(APIView):
         except:
             
             return JsonResponse({"code": 400, "status": "failure",
-                            "message": "Empty Data",
-                             "details": {}})
+                            "message": "Empty Field",
+                             "details": serializer.errors})
             
         toret = {}
         toret['full_name']=queryset.full_name

@@ -296,10 +296,6 @@ class GetProfileAPIView(APIView):
             queryset = UserProfile.objects.get(user_id=user_id)
         except:
             
-            return JsonResponse({"code": 400, "status": "failure",
-                            "message": "Empty Data",
-                             "details": {}})
-            
         toret = {}
         toret['full_name']=queryset.full_name
         toret['address']=queryset.address
